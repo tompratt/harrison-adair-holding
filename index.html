@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Harrison Adair</title>
+
+	<style>
+		body {
+			margin: 0;
+			background-color: black;
+		}
+
+		html, * {
+			box-sizing: border-box;
+		}
+
+		#video_bg {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+		}
+
+		#video_bg iframe {
+			width: 100vw;
+           height: 56.25vw; 
+           min-height: 100vh;
+           min-width: 177.77vh;
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+		}
+
+		#harrison, #adair {
+			position: fixed;
+			left: 0;
+			width: 100%;
+			padding: 20px;
+			text-align: center;
+			z-index: 2;
+			mix-blend-mode: difference;
+			color: white;
+		}
+
+		#harrison svg, #adair svg {
+			height: 5vw;
+			width: auto;
+			fill: currentColor;
+		}
+		@media screen and (max-width: 800px) {
+			#harrison svg, #adair svg {
+				height: 10vw;
+			}
+		}
+
+		#harrison {
+			top: 0;
+		}
+
+		#adair {
+			bottom: 0;
+		}
+
+		#info {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+			mix-blend-mode: difference;
+			color: white;
+			font-family: sans-serif;
+			font-size: 12px;
+			max-width: 250px;
+		}
+		#info a {
+			color: inherit;
+			text-decoration: underline;
+			text-underline-offset: 1px;
+		}
+		#info a:hover {
+			opacity: .6;
+		}
+		.info_content {
+			pointer-events: none;
+			opacity: 0;
+			transition: opacity .2s ease;
+		}
+		.info_button {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			transform: translate(0px,-50%);
+			text-transform: uppercase;
+			transition: opacity .2s ease;
+		}
+
+		html.no-touchevents #info:hover .info_button, html.touchevents #info.active .info_button {
+			opacity: 0;
+			pointer-events: none;
+		}
+		html.no-touchevents #info:hover .info_content, html.touchevents #info.active .info_content {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="video_bg">
+		<iframe src="https://player.vimeo.com/video/1166105429?h=7e899323d9&background=1" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+	</div>
+	<div id="harrison"><svg viewBox="0 0 357.43 47.72"><path class="cls-1" d="M0,44.69c1.78-.09,3.04-.34,3.78-.75,1.24-.7,1.86-2.01,1.86-3.95V7.63c0-1.88-.55-3.15-1.66-3.82-.67-.39-2-.68-3.98-.88v-1.7h22.6v1.7c-1.96.11-3.32.37-4.08.78-1.26.69-1.89,2-1.89,3.92v13.86h15.92V7.63c0-1.92-.6-3.22-1.79-3.89-.74-.41-2.12-.68-4.14-.81v-1.7h22.73v1.7c-1.96.15-3.29.43-4.01.84-1.2.67-1.79,1.95-1.79,3.85v32.36c0,1.96.66,3.28,1.99,3.98.76.41,2.03.65,3.82.72v1.7h-22.73v-1.7c1.91-.06,3.27-.33,4.08-.78,1.24-.7,1.86-2,1.86-3.91v-15.4h-15.92v15.4c0,1.98.67,3.32,2.02,4.01.78.39,2.1.62,3.95.69v1.7H0v-1.7Z"/><path class="cls-1" d="M51.96,44.69c1.61-.11,2.9-.84,3.88-2.19.63-.85,1.53-2.72,2.71-5.61L73.39.33h1.86l14.91,35.1c1.67,3.94,2.92,6.48,3.75,7.62.83,1.14,2,1.69,3.52,1.65v1.7h-21.63v-1.7c2.17-.09,3.6-.27,4.29-.55.68-.28,1.03-1,1.03-2.15,0-.52-.17-1.32-.52-2.38-.22-.63-.51-1.39-.88-2.28l-1.7-4.04h-15c-.98,2.65-1.61,4.38-1.89,5.19-.59,1.72-.88,2.97-.88,3.75,0,.96.64,1.65,1.92,2.09.76.24,1.9.37,3.42.39v1.7h-13.63v-1.7ZM77.04,30.63l-6.43-15.46h-.56l-6.03,15.46h13.02Z"/><path class="cls-1" d="M100.07,44.69c2.26-.11,3.81-.53,4.63-1.27.83-.74,1.24-2.35,1.24-4.83V9.04c0-2.57-.49-4.25-1.47-5.03-.65-.52-2.12-.88-4.4-1.07v-1.7h21.5c4.46,0,8.07.47,10.83,1.4,5.35,1.89,8.02,5.3,8.02,10.21,0,3.63-1.4,6.49-4.2,8.58-2.14,1.57-4.41,2.57-6.8,3l14.2,19.02c.37.52.76.86,1.17,1.03s.92.27,1.53.31v1.6h-13.94l-15.58-20.88h-.03v13.08c0,2.35.39,3.93,1.17,4.75s2.35,1.27,4.7,1.35v1.7h-22.57v-1.7ZM126.15,21.51c1.88-1.16,2.82-3.85,2.82-8.07,0-2.59-.36-4.63-1.08-6.13-1.24-2.54-3.5-3.82-6.78-3.82-1.78,0-2.95.22-3.51.67-.55.45-.83,1.18-.83,2.2v16.99c4.37-.07,7.5-.68,9.38-1.84Z"/><path class="cls-1" d="M148.31,44.69c2.26-.11,3.81-.53,4.63-1.27.83-.74,1.24-2.35,1.24-4.83V9.04c0-2.57-.49-4.25-1.47-5.03-.65-.52-2.12-.88-4.4-1.07v-1.7h21.5c4.46,0,8.07.47,10.83,1.4,5.35,1.89,8.02,5.3,8.02,10.21,0,3.63-1.4,6.49-4.2,8.58-2.14,1.57-4.41,2.57-6.8,3l14.2,19.02c.37.52.76.86,1.17,1.03s.92.27,1.53.31v1.6h-13.94l-15.58-20.88h-.03v13.08c0,2.35.39,3.93,1.17,4.75s2.35,1.27,4.7,1.35v1.7h-22.57v-1.7ZM174.39,21.51c1.88-1.16,2.82-3.85,2.82-8.07,0-2.59-.36-4.63-1.08-6.13-1.24-2.54-3.5-3.82-6.78-3.82-1.78,0-2.95.22-3.51.67-.55.45-.83,1.18-.83,2.2v16.99c4.37-.07,7.5-.68,9.38-1.84Z"/><path class="cls-1" d="M196.56,44.69c1.89-.04,3.25-.27,4.08-.69,1.35-.7,2.02-2.03,2.02-4.01V7.63c0-1.97-.64-3.28-1.92-3.95-.78-.41-2.17-.66-4.18-.75v-1.7h23.35v1.7c-2.09.09-3.52.32-4.31.71-1.3.67-1.96,2-1.96,3.98v32.36c0,1.87.52,3.12,1.57,3.75,1.04.63,2.61.95,4.7.95v1.7h-23.35v-1.7Z"/><path class="cls-1" d="M223.83,30.79h1.92c1.06,4.99,2.78,8.62,5.15,10.89,2.37,2.27,5.09,3.4,8.15,3.4s5.09-.78,6.35-2.33c1.25-1.56,1.88-3.19,1.88-4.91,0-2-.65-3.63-1.96-4.9-.87-.83-2.62-1.9-5.27-3.23l-4.25-2.15c-4.22-2.13-7.2-4.24-8.94-6.33-1.74-2.09-2.6-4.67-2.6-7.74,0-3.26,1.15-6.31,3.45-9.14,2.3-2.83,5.82-4.24,10.57-4.24,2.42,0,4.75.37,7.01,1.11s3.54,1.11,3.87,1.11c.73,0,1.23-.21,1.51-.64.28-.42.5-.98.67-1.68h1.99v14.55h-1.86c-.87-3.37-2.41-6.27-4.61-8.71-2.2-2.44-4.87-3.65-8.02-3.65-2.21,0-3.96.62-5.25,1.84-1.29,1.23-1.93,2.73-1.93,4.49,0,2.11.6,3.69,1.81,4.73,1.18,1.07,3.83,2.63,7.95,4.7l4.93,2.48c2.2,1.11,3.95,2.34,5.26,3.69,2.44,2.52,3.67,5.59,3.67,9.19,0,3.37-1.31,6.55-3.93,9.54-2.62,2.99-6.82,4.48-12.59,4.48-1.33,0-2.67-.13-4.03-.38-1.36-.25-2.7-.64-4.03-1.16l-1.28-.49c-.3-.09-.59-.16-.87-.21-.28-.05-.51-.08-.71-.08-.68,0-1.15.2-1.41.6-.26.4-.48.97-.67,1.71h-1.92v-16.54Z"/><path class="cls-1" d="M301.33,6.75c4.59,4.46,6.88,10.2,6.88,17.22s-2.29,12.77-6.88,17.22c-4.48,4.35-10.08,6.52-16.8,6.52-7.13,0-12.95-2.38-17.45-7.14-4.2-4.48-6.3-9.89-6.3-16.24,0-7,2.2-12.75,6.59-17.26,4.44-4.57,10.16-6.85,17.16-6.85s12.34,2.17,16.8,6.52ZM294.83,36.57c1-3.22,1.5-7.42,1.5-12.59,0-7.11-1.06-12.47-3.19-16.08-2.12-3.61-5-5.41-8.64-5.41-5.05,0-8.51,3.01-10.39,9.04-.98,3.2-1.47,7.35-1.47,12.46s.5,9.39,1.5,12.59c1.85,5.94,5.3,8.9,10.35,8.9s8.45-2.97,10.32-8.9Z"/><path class="cls-1" d="M311.67,44.69c2.48-.06,4.08-.54,4.79-1.42.72-.88,1.08-2.18,1.08-3.9V7.73c-2.04-2.28-3.31-3.63-3.78-4.03-.48-.4-1.13-.66-1.96-.77v-1.7h14.16l22.96,27.91h.33V9.52c0-2.26-.41-3.88-1.23-4.84-.82-.97-2.47-1.55-4.93-1.75v-1.7h14.35v1.7c-2.09.35-3.49.81-4.19,1.39-.71.58-1.06,1.89-1.06,3.92v39.37h-1.86l-29.39-35.72h-.46v26.19c0,2.05.28,3.51.85,4.36.89,1.38,2.72,2.12,5.48,2.23v1.7h-15.13v-1.7Z"/></svg></div>
+	<div id="adair"><svg viewBox="0 0 216.84 46.06"><path class="cls-1" d="M0,44.36c1.61-.11,2.9-.84,3.88-2.19.63-.85,1.53-2.72,2.71-5.61L21.43,0h1.86l14.91,35.1c1.67,3.94,2.92,6.47,3.75,7.62.83,1.14,2,1.69,3.52,1.65v1.7h-21.63v-1.7c2.17-.09,3.6-.27,4.29-.55.68-.28,1.03-1,1.03-2.15,0-.52-.17-1.32-.52-2.38-.22-.63-.51-1.39-.88-2.28l-1.7-4.04h-15c-.98,2.65-1.61,4.38-1.89,5.19-.59,1.72-.88,2.97-.88,3.75,0,.96.64,1.65,1.92,2.09.76.24,1.9.37,3.42.39v1.7H0v-1.7ZM25.08,30.3l-6.43-15.46h-.56l-6.03,15.46h13.02Z"/><path class="cls-1" d="M47.95,44.36c1.67-.11,2.88-.35,3.62-.72,1.3-.67,1.96-1.9,1.96-3.69V7.01c0-1.72-.62-2.91-1.86-3.59-.72-.39-1.96-.66-3.72-.82V.91h20.42c8.24,0,14.53,2.2,18.85,6.59,3.94,4,5.9,9.37,5.9,16.11,0,6.05-1.98,11.17-5.94,15.36-4.46,4.72-10.5,7.08-18.14,7.08h-21.1v-1.7ZM65.09,42.89c.45.61,1.4.91,2.85.91,3.96,0,7.21-1.4,9.75-4.19,2.54-2.79,3.82-8.16,3.82-16.1,0-4.72-.69-8.77-2.06-12.17-2.22-5.46-5.96-8.19-11.22-8.19-1.74,0-2.87.37-3.39,1.11-.35.48-.52,1.4-.52,2.77v32.88c.07,1.37.32,2.36.77,2.97Z"/><path class="cls-1" d="M96.48,44.36c1.61-.11,2.9-.84,3.88-2.19.63-.85,1.53-2.72,2.71-5.61L117.91,0h1.86l14.91,35.1c1.67,3.94,2.92,6.47,3.75,7.62.83,1.14,2,1.69,3.52,1.65v1.7h-21.63v-1.7c2.17-.09,3.6-.27,4.29-.55.69-.28,1.03-1,1.03-2.15,0-.52-.17-1.32-.52-2.38-.22-.63-.51-1.39-.88-2.28l-1.7-4.04h-15c-.98,2.65-1.61,4.38-1.89,5.19-.59,1.72-.88,2.97-.88,3.75,0,.96.64,1.65,1.92,2.09.76.24,1.9.37,3.43.39v1.7h-13.63v-1.7ZM121.56,30.3l-6.43-15.46h-.56l-6.03,15.46h13.02Z"/><path class="cls-1" d="M144.6,44.36c1.89-.04,3.25-.27,4.08-.68,1.35-.7,2.02-2.03,2.02-4.01V7.31c0-1.96-.64-3.28-1.92-3.95-.78-.41-2.17-.66-4.18-.75V.91h23.35v1.7c-2.09.09-3.52.32-4.31.71-1.3.67-1.96,2-1.96,3.98v32.36c0,1.87.52,3.12,1.57,3.75,1.04.63,2.61.95,4.7.95v1.7h-23.35v-1.7Z"/><path class="cls-1" d="M170.59,44.36c2.26-.11,3.81-.53,4.63-1.27.83-.74,1.24-2.35,1.24-4.83V8.71c0-2.57-.49-4.25-1.47-5.03-.65-.52-2.12-.88-4.4-1.07V.91h21.5c4.46,0,8.07.47,10.83,1.4,5.35,1.89,8.02,5.3,8.02,10.21,0,3.63-1.4,6.49-4.2,8.58-2.14,1.57-4.41,2.57-6.8,3l14.2,19.02c.37.52.76.86,1.17,1.03s.92.27,1.53.31v1.6h-13.94l-15.58-20.88h-.03v13.08c0,2.35.39,3.93,1.17,4.75s2.35,1.27,4.7,1.35v1.7h-22.57v-1.7ZM196.67,21.19c1.88-1.16,2.82-3.85,2.82-8.07,0-2.59-.36-4.63-1.08-6.13-1.24-2.54-3.5-3.82-6.78-3.82-1.78,0-2.95.22-3.51.67-.55.45-.83,1.18-.83,2.2v16.99c4.37-.07,7.5-.68,9.38-1.84Z"/></svg></div>
+
+	<div id="info">
+		<div class="info_content">
+			<p>Multidisciplinary creative practice working across entertainment, art, and fashion. Formed by Thomas Harrison and James Adair in 2025.</p>
+			<p>
+			FILM<br/>
+			PHOTO<br/>
+			CREATIVE DIRECTION</p>
+			<p>ADIDAS<br/>
+			LIL YACHTY<br/>
+			JAMES BLAKE<br/>
+			NIKE<br/>
+			MOTHERLAN<br/>
+			CHASE & STATUS<br/>
+			HICKS<br/>
+			NEMAHSIS<br/>
+			PINKPANTHERESS</p>
+			<p><a href="mailto:Studio@harrisonadair.com">E-MAIL</a><br/>
+			<a href="mailto:Studio@harrisonadair.com">AGENT CONTACT</a><br/>
+			<a href="https://www.instagram.com/harrison__adair/" target="_blank">@HARRISON_ADAIR</a></p>
+			<p>IDENTITY and WEB<br/>
+			BY <a href="https://olivershawoffice.com/" target="_blank">OLIVER SHAW OFFICE</a></p>
+		</div>
+		<div class="info_button">Information</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		/*! modernizr 3.6.0 (Custom Build) | MIT *
+ * https://modernizr.com/download/?-touchevents-setclasses !*/
+!function(e,n,t){function o(e,n){return typeof e===n}function s(){var e,n,t,s,a,i,r;for(var l in c)if(c.hasOwnProperty(l)){if(e=[],n=c[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(s=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],r=i.split("."),1===r.length?Modernizr[r[0]]=s:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=s),f.push((s?"":"no-")+r.join("-"))}}function a(e){var n=u.className,t=Modernizr._config.classPrefix||"";if(p&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(o,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),p?u.className.baseVal=n:u.className=n)}function i(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):p?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function r(){var e=n.body;return e||(e=i(p?"svg":"body"),e.fake=!0),e}function l(e,t,o,s){var a,l,f,c,d="modernizr",p=i("div"),h=r();if(parseInt(o,10))for(;o--;)f=i("div"),f.id=s?s[o]:d+(o+1),p.appendChild(f);return a=i("style"),a.type="text/css",a.id="s"+d,(h.fake?h:p).appendChild(a),h.appendChild(p),a.styleSheet?a.styleSheet.cssText=e:a.appendChild(n.createTextNode(e)),p.id=d,h.fake&&(h.style.background="",h.style.overflow="hidden",c=u.style.overflow,u.style.overflow="hidden",u.appendChild(h)),l=t(p,e),h.fake?(h.parentNode.removeChild(h),u.style.overflow=c,u.offsetHeight):p.parentNode.removeChild(p),!!l}var f=[],c=[],d={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){c.push({name:e,fn:n,options:t})},addAsyncTest:function(e){c.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=d,Modernizr=new Modernizr;var u=n.documentElement,p="svg"===u.nodeName.toLowerCase(),h=d._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""];d._prefixes=h;var m=d.testStyles=l;Modernizr.addTest("touchevents",function(){var t;if("ontouchstart"in e||e.DocumentTouch&&n instanceof DocumentTouch)t=!0;else{var o=["@media (",h.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join("");m(o,function(e){t=9===e.offsetTop})}return t}),s(),a(f),delete d.addTest,delete d.addAsyncTest;for(var v=0;v<Modernizr._q.length;v++)Modernizr._q[v]();e.Modernizr=Modernizr}(window,document);
+		$(document).ready(function(){
+			if(Modernizr.touchevents) {
+				$('.info_button').click(function(){
+					$('#info').addClass('active');
+				});
+				$('body').on('click','#info.active .info_content',function(e){
+					if(e.target == 'a'){} else {
+						$('#info').removeClass('active');
+					}
+				})
+			}
+		});
+	</script>
+</body>
+</html>
