@@ -9,9 +9,20 @@
   	<meta property="og:description" content="Multidisciplinary creative practice working across entertainment, art, and fashion. Formed by Thomas Harrison and James Adair in 2025." />
 
 	<style>
+		@font-face {
+		  font-family: 'HarrisonAdair';
+		  src:  url('font.woff2') format('woff2'),
+		        url('font.woff') format('woff');
+		  text-rendering: optimizeLegibility;
+		}
 		body {
 			margin: 0;
 			background-color: black;
+			font-family: 'HarrisonAdair', sans-serif;
+		}
+
+		p {
+			font-family: 'HarrisonAdair', sans-serif;
 		}
 
 		html, * {
@@ -76,13 +87,13 @@
 			text-align: center;
 			mix-blend-mode: difference;
 			color: white;
-			font-family: sans-serif;
+			font-family: 'HarrisonAdair', sans-serif;
 			font-size: 12px;
 			max-width: 250px;
 		}
 		#info a {
 			color: inherit;
-			text-decoration: underline;
+			text-decoration: none;
 			text-underline-offset: 1px;
 		}
 		#info a:hover {
@@ -102,6 +113,10 @@
 			text-transform: uppercase;
 			transition: opacity .2s ease;
 		}
+		p.credit {
+			font-size: .7em;
+			margin-top: 40px;
+		}
 
 		html.no-touchevents #info:hover .info_button, html.touchevents #info.active .info_button {
 			opacity: 0;
@@ -110,6 +125,12 @@
 		html.no-touchevents #info:hover .info_content, html.touchevents #info.active .info_content {
 			opacity: 1;
 			pointer-events: auto;
+		}
+		p.close {
+			text-transform: uppercase;
+		}
+		html.no-touchevents p.close {
+			display: none;
 		}
 
 	</style>
@@ -127,8 +148,10 @@
 			<p><a href="mailto:Studio@harrisonadair.com">E-MAIL</a><br/>
 			<a href="mailto:Shirley@lovesong.tv">AGENT CONTACT</a><br/>
 			<a href="https://www.instagram.com/harrison__adair/" target="_blank">@HARRISON_ADAIR</a></p>
-			<p>IDENTITY and WEB<br/>
+			<p class="close">Close</p>
+			<p class="credit">IDENTITY and WEB<br/>
 			BY <a href="https://olivershawoffice.com/" target="_blank">OLIVER SHAW OFFICE</a></p>
+			
 		</div>
 		<div class="info_button">Information</div>
 	</div>
@@ -143,7 +166,7 @@
 				$('.info_button').click(function(){
 					$('#info').addClass('active');
 				});
-				$('body').on('click','#info.active .info_content',function(e){
+				$('body').on('click','#info.active .info_content, .close',function(e){
 					if(e.target == 'a'){} else {
 						$('#info').removeClass('active');
 					}
